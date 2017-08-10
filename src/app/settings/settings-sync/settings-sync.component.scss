@@ -1,0 +1,40 @@
+.instructions_trigger {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 17px;
+    padding: 10px 0;
+    outline: 0;
+    cursor: pointer;
+    padding-right: 25px;
+    &:after, &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 11px;
+        height: 1px;
+        background: black;
+        top: 23px;
+        transition: transform 600ms linear;
+    }
+    &:after {
+        transform: rotate(45deg);
+        right: 8px;
+    }
+    &:before {
+        transform: rotate(-45deg);
+        right: 0px;
+    }
+    &.rotate {
+        &:after {
+          transform: rotate(-45deg);
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+    }
+}
+
+ul {
+    text-align: left;
+}

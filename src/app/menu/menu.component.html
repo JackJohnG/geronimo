@@ -1,0 +1,23 @@
+<div class="hamburger__wrapper col-sm-4 col-md-3" [hidden]="hideElement">
+    <button class="hamburger hamburger--3dx nodefault" type="button" (click)="toggleMenu()" [ngClass]="{'is-active': menuBtnTransform}">
+      <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+      </span>
+    </button>
+</div>
+<div class="menu__wrapper" (click)="closeMenu($event)" [ngClass]="{active: menuWrapperOpen}">
+    <div class="menu col-sm-4 col-md-3 padding-side-0" [ngClass]="{active: menuOpen}">
+        <a class="menu__option" (click)="goToPage('/notes')">
+          <i class="icon-list"></i>
+          <span>Notes</span>
+        </a>
+        <a class="menu__option" (click)="goToPage('/settings')">
+            <i class="icon-settings"></i>
+            <span>Settings</span>
+        </a>
+        <a class="menu__option" (click)="goToPage('/notes-json')">
+            <i class="icon-text"></i>
+            <span>JSON Notes</span>
+        </a>
+    </div>
+</div>

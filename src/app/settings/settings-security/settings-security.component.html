@@ -1,0 +1,28 @@
+<table>
+    <tr class="setting__input_wrapper">
+        <td><label>New Password: </label></td>
+        <td class="relative">
+            <input class="input__with_info" type="password" [(ngModel)]="password">
+            <button class="btn__info" data-toggle="modal" data-target="#securityInfoModal">i</button>
+        </td>
+    </tr>
+    <tr class="setting__input_wrapper">
+        <td colspan="3">
+            <button class="btn__save" type="button" (click)="savePassword()">Save</button>
+        </td>
+    </tr>
+</table>
+
+<div class="modal fade" id="securityInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                If the password is set, you will be required to write it every time when you open the application.<br>
+                Moreover, it is used as a keyword for the encryption of all notes.
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-primary nodefault" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

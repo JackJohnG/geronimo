@@ -1,0 +1,27 @@
+<table>
+    <tr class="setting__input_wrapper">
+        <td><label>Cleint ID: </label></td>
+        <td>
+            <input type="text" [(ngModel)]="clientID" (blur)="saveGoogleClientID()" placeholder="client ID" />
+        </td>
+    </tr>
+</table>
+<div class="text-center">Don't know how to get <i>Client ID</i>? Checkout information below</div>
+<div class="text-center">
+    <button class="instructions_trigger nodefault" (click)="toggleInstructions()" [ngClass]="{rotate: showInstructions}">Instructions</button>
+</div>
+<div class="text-center">
+  <ul #instructions class="hidden">
+    <li>Use this <a href="https://console.developers.google.com/start/api?id=drive" target="_blank">wizard</a>
+      to create or select a project in the Google Developers Console and automatically turn on the API. Click <strong>Continue</strong>, then <strong>Go to credentials</strong>.</li>
+    <li>On the <strong>Add credentials to your project</strong> page, click the <strong>Cancel</strong> button.</li>
+    <li>At the top of the page, select the <strong>OAuth consent screen</strong> tab. Select an <strong>Email address</strong>, enter a <strong>Product name</strong> if not already set,
+      and click the <strong>Save</strong> button.</li>
+    <li>Select the <strong>Credentials</strong> tab, click the <strong>Create credentials</strong> button and select <strong>OAuth client ID</strong>.</li>
+    <li>Select the application type <strong>Web application</strong>.</li>
+    <li>In the <strong>Authorized JavaScript origins</strong> field, enter the URL <u>http://localhost:3001</u>. You can leave the <strong>Authorized redirect URIs</strong> field blank.</li>
+    <li>Click the <strong>Create</strong> button.</li>
+    <li>Copy the client ID in the resulting dialog and paste it in the above input field.</li>
+    <li>Click <strong>OK</strong> to dismiss the resulting dialog.</li>
+  </ul>
+</div>

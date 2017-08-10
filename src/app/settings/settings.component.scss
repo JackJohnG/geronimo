@@ -1,0 +1,27 @@
+@import "../../styles";
+
+.settings__wrapper {
+    div {
+        display: flex;
+        align-items: center;
+        color: black;
+        font-size: 20px;
+        padding: 10px 20px;
+        transition: $general_transition;
+        cursor: pointer;
+        &:hover {
+            background: $color_select;
+            color: white;
+        }
+        &.selected {
+            color: white;
+            background: $color_select;
+        }
+    }
+}
+
+.settings__section {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

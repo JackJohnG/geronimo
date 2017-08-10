@@ -1,0 +1,68 @@
+@import "../../styles";
+
+.hamburger__wrapper {
+    position: absolute;
+}
+
+.hamburger {
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    z-index: 10;
+    &.is-active {
+        left: calc(100% - 70px);
+    }
+}
+
+.menu__wrapper {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    &.active {
+        left: 0;
+    }
+}
+
+.menu {
+    padding-top: 60px;
+    background: white;
+    position: absolute;
+    left: -100%;
+    height: 100vh;
+    top: 0;
+    transition: left 350ms ease-in-out;
+    z-index: 1;
+    &.active {
+        left: 0;
+    }
+}
+
+.menu__option {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: $general_transition;
+    cursor: pointer;
+    &:first-child {
+        border-top: 1px solid #ddd;
+    }
+    i {
+        font-size: 23px;
+    }
+    span {
+        font-size: 22px;
+        padding-left: 15px;
+    }
+    &:hover {
+        background: $color_select;
+        * {
+            color: white;
+        }
+    }
+}

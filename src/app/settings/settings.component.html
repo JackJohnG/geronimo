@@ -1,0 +1,17 @@
+<div class="row height-100">
+  <div class="col-sm-4 col-lg-3 padding-right-0 border-right">
+    <div class="top_header">
+    </div>
+    <div class="settings__wrapper">
+        <div [ngClass]="{selected: currentTab == 'general'}" (click)="changeCurrentTab('general')">General</div>
+        <div [ngClass]="{selected: currentTab == 'security'}" (click)="changeCurrentTab('security')">Security</div>
+        <div [ngClass]="{selected: currentTab == 'sync'}" (click)="changeCurrentTab('sync')">Sync</div>
+    </div>
+  </div>
+  <div class="col-sm-8 col-lg-9 padding-left-0 settings__section">
+      <app-settings-general [hidden]="currentTab != 'general'"></app-settings-general>
+      <app-settings-security [hidden]="currentTab != 'security'"></app-settings-security>
+      <app-settings-sync [hidden]="currentTab != 'sync'"></app-settings-sync>
+  </div>
+</div>
+

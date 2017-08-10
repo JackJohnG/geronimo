@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <h1>Geronimo</h1>
+    <div class="input_wrapper">
+        <div class="spinner" [hidden]="!passwordIsChecking">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+            <div class="double-bounce3"></div>
+        </div>
+        <input [ngClass]="{shake: shake}" #passwordInput placeholder="Enter your password" type="password" [(ngModel)]="password" (keyup.enter)="comparePasswords()" />
+        <button [ngClass]="{active: password.length > 0}" (click)="comparePasswords()">Unlock</button>
+    </div>
+
+</div>

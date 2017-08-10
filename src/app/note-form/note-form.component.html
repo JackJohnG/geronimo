@@ -1,0 +1,46 @@
+<div #topElementsWrapper>
+    <div class="top-bar">
+        <button title="Cancel" (click)="cancelNote()"><i class="icon-cancel"></i></button>
+        <button title="Save Note" (click)="saveNote()"><i class="icon-save"></i></button>
+        <button *ngIf="editMode" title="Delete Note" (click)="deleteNote()"><i class="icon-trash"></i></button>
+    </div>
+    <div class="col-sm-12 note__title">
+        <input [ngClass]="{invalid: formSubmitted && note.title.length === 0}" type="text" id="titleInput" [(ngModel)]="note.title" placeholder="Title" />
+    </div>
+</div>
+<div class="row" #noteTextArea>
+    <div class="col-sm-6 background-dark-gray border-right--thick padding-right-0">
+        <textarea [ngClass]="{invalid: formSubmitted && note.text.length === 0}" [ngStyle]="{'font-size': fontSize}" [(ngModel)]="note.text" (keydown)="tabIndent($event)"></textarea>
+    </div>
+    <div class="col-sm-6 background-dark-gray border-left--thick padding-left-0">
+        <markdown [data]="note.text"></markdown>
+        <button data-toggle="modal" data-target="#tagsModal" class="tags_btn">Tags</button>
+    </div>
+</div>
+<textarea class="for_copy"></textarea>
+
+<div class="modal fade" id="tagsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                Add tags for note
+            </div>
+            <div class="modal-body">
+                <div class="tags__input_wrapper">
+                    <input type="text" [(ngModel)]="tagInput" [ngClass]="{'suggestion_opened': suggestedTags.length !== 0}" (blur)="clearSuggestedTags()"
+                           (keyup)="addTag($event)" (keydown.ArrowDown)="selectTagSuggestion(true)" (keydown.ArrowUp)="selectTagSuggestion(false)">
+                    <div class="tags__input_suggestions" [hidden]="suggestedTags.length === 0">
+                        <div *ngFor="let tag of suggestedTags" (click)="addSuggestedTag(tag)"
+                             [ngClass]="{selected: selectedTagSuggestion === tag}">{{tag}}</div>
+                    </div>
+                </div>
+                <div class="tags_container">
+                    <span *ngFor="let tag of note.tags" (click)="removeTag(tag)">{{tag}}</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary nodefault" data-dismiss="modal">Done</button>
+            </div>
+        </div>
+    </div>
+</div>

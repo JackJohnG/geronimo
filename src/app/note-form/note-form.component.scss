@@ -1,0 +1,131 @@
+@import "../../styles";
+
+.top-bar {
+    background: #eee;
+    padding: 8px 0px;
+    text-align: right;
+    height: 61px;
+}
+
+.note__title {
+    padding: 10px 15px;
+    background: #ccc;
+    flex: 0 0 auto;
+    input {
+        padding: 0px 5px;
+        font-size: 25px;
+        width: 100%;
+        outline: 0;
+        border: 2px solid transparent;
+        padding-left: 10px;
+        &.invalid {
+            border-color: red;
+        }
+    }
+}
+
+textarea {
+    width: calc(100% - 15px);
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: 0;
+    font-size: 18px;
+    margin-left: 15px;
+    padding: 15px;
+    background: white;
+    border: 2px solid transparent;
+    &.invalid {
+        border-color: red;
+    }
+}
+
+.tags_btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 30px !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+markdown {
+    padding: 15px;
+    height: 100%;
+    position: absolute;
+    width: calc(100% - 30px);
+    background: white;
+    overflow: auto;
+}
+
+textarea.for_copy {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    opacity: 0;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+#tagsModal {
+    .modal-body {
+        padding: 15px 10px;
+    }
+    .tags__input_wrapper {
+        position: relative;
+    }
+    .tags__input_suggestions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        z-index: 1;
+        border: 1px solid #ddd;
+        div {
+            border-bottom: 1px solid #ddd;
+            padding: 5px;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:hover, &.selected {
+                background: $color_select;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+    input {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        width: 100%;
+        outline: 0;
+        padding: 2px 10px;
+        &.suggestion_opened {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .tags_container {
+        margin-top: 15px;
+        span {
+            padding: 3px 10px 3px 25px;
+            margin-right: 5px;
+            position: relative;
+            background: #76a4ed;
+            color: white;
+            border-radius: 5px;
+            &:before {
+                content: 'X';
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                font-size: 13px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+}

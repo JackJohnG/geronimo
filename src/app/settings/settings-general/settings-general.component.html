@@ -1,0 +1,27 @@
+<table>
+    <tr class="setting__input_wrapper">
+        <td><label>Sort by: </label></td>
+        <td>
+            <select [(ngModel)]="sort">
+                <option value="title_a_z">Title A-Z</option>
+                <option value="title_z_a">Title Z-A</option>
+                <option value="date_created">Date Created</option>
+                <option value="date_modified">Date Modified</option>
+            </select>
+        </td>
+    </tr>
+    <tr class="setting__input_wrapper">
+        <td><label>Notes per page: </label></td>
+        <input (keyup)="saveNotesPerPage()" data-toggle="tooltip" data-placement="bottom" data-html="true"
+               title="Type <strong style='color: #76A4ED'>-1</strong> to display all notes in one page" type="number" [(ngModel)]="notesPerPage" />
+    </tr>
+    <tr class="setting__input_wrapper">
+        <td><label>Input font size(px): </label></td>
+        <input type="number" (keyup)="saveInputFontSize()" [(ngModel)]="fontSize" />
+    </tr>
+    <tr class="setting__input_wrapper">
+        <td><label>Copy button identifier: </label></td>
+        <input (keyup)="saveCopyBtnIdentifier()" data-toggle="tooltip" data-placement="bottom" data-html="true"
+               title="Set up sequence of characters which converted to copy button" type="text" [(ngModel)]="copyBtnIdentifier" />
+    </tr>
+</table>
