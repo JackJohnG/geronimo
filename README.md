@@ -1,7 +1,7 @@
 # Geronimo - NoteKeeper
 
 This is a note keeper app which I have created for my own usage and decided to share it in case someone else is interested in it.
-The application can be configured to use your Google Drive account to store your notes, allowing you to access your notes from any PC where the application is installed.
+The application can be configured to use your Google Drive account to store your notes(basically any kind of a text) using Markdown, allowing you to access your notes from any PC where the application is installed. The application also provides security feature to store your notes hashed.
 
 ## Development
 
